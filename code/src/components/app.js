@@ -7,8 +7,6 @@ console.log("Products:", productsJson)
 
 class App extends React.Component {
   render() {
-    // class inStore = productsJson.products
-    // console.log(inStore)
     let storeProducts = []
     storeProducts = productsJson.products
     console.log(storeProducts)
@@ -16,11 +14,11 @@ class App extends React.Component {
       <div className="App">
         <div className="mainContainer">
           <section className="headerSection">
-            <h1>HEADER</h1>
+            <h1><span id="logo1">APP</span><br></br>[OTEKET]</h1>
           </section>
 
           <section className="productSection">
-            <h1>PRODUCTS</h1>
+            <h1 className="categoryHeader">PRODUCTS</h1>
             <div className="productContainer">
               {storeProducts.map((product, index) => {
                 console.log(index)
