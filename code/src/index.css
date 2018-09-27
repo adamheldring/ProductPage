@@ -24,6 +24,7 @@ body {
 .productContainer {
   background: lightgrey;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .product {

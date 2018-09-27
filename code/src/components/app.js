@@ -3,13 +3,15 @@ import Product from "./Product"
 
 const productsJson = require("./../products.json")
 
-console.log("Products: (Remove this line in app.js!)", productsJson)
+console.log("Products:", productsJson)
 
 class App extends React.Component {
-
   render() {
     // class inStore = productsJson.products
     // console.log(inStore)
+    let storeProducts = []
+    storeProducts = productsJson.products
+    console.log(storeProducts)
     return (
       <div className="App">
         <div className="mainContainer">
@@ -20,9 +22,24 @@ class App extends React.Component {
           <section className="productSection">
             <h1>PRODUCTS</h1>
             <div className="productContainer">
+              {storeProducts.map((product, index) => {
+                console.log(index)
+                return <Product
+                  name={product.name}
+                  imageUrl={product.image}
+                  deliveryTime={product.deliveryTime}
+                  description={product.description}
+                  key={product.id}
+                  numberInPack={product.numberInPack}
+                  price={product.price}
+                  size={product.size}
+                  substance={product.substance}
+                  type={product.type}
+                />
+            })}
 
 
-              <Product
+{/*              <Product
                 name={productsJson.products[0].name}
                 imageUrl={productsJson.products[0].image}
                 deliveryTime={productsJson.products[0].deliveryTime}
@@ -33,11 +50,11 @@ class App extends React.Component {
                 size={productsJson.products[0].size}
                 substance={productsJson.products[0].substance}
                 type={productsJson.products[0].type}
-              />
+              /> */}
 
             {/*            <Product name={productsJson.products[1].name} imageUrl={productsJson.products[1].image}></Product>
           <Product name={productsJson.products[2].name} imageUrl={productsJson.products[2].image}></Product>
-          {productsJson.products.map()}
+
 
           */}
             </div>
