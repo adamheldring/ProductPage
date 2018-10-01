@@ -9,13 +9,22 @@ class Product extends React.Component {
         <div className="imageContainer">
           <img src={`${this.props.imageUrl}`} alt="product"></img>
         </div>
-        <p>{this.props.deliveryTime}</p>
-        <p>{this.props.description}</p>
-        <p>{this.props.numberInPack}</p>
-        <p>{this.props.price}</p>
-        <p>{this.props.size}</p>
-        <p>{this.props.substance}</p>
-        <p>{this.props.type}</p>
+        <div className="productInfo">
+          <p className="typeOfProduct">{this.props.type}</p>
+          <p>
+            <b>Substans: </b>{this.props.substance}<br />
+            <b>Leveranstid: </b>{this.props.deliveryTime}<br />
+            <b>Storlek per dos: </b>{this.props.size}<br />
+            <b>Antal i förpackning: </b>{this.props.numberInPack}
+          </p>
+        <p className="productPrice"><b>{this.props.price}:-</b></p>
+        </div>
+
+
+        <p className="productDescription">{this.props.description}
+          <br /><br /><span className="buyButton">KÖP</span>
+        </p>
+
       </div>
     )
   }

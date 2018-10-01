@@ -10,6 +10,16 @@ class App extends React.Component {
     let storeProducts = []
     storeProducts = productsJson.products
     console.log(storeProducts)
+
+    // Removes the last word of product name if longer than 18 characters
+    storeProducts.forEach((product) => {
+      if (product.name.length > 18) {
+        const lastWhiteSpace  = product.name.lastIndexOf(" ");
+        const shorterName = product.name.slice(0, lastWhiteSpace)
+        product.name = shorterName
+      }
+    })
+
     return (
       <div className="App">
         <div className="mainContainer">
@@ -18,7 +28,7 @@ class App extends React.Component {
           </section>
 
           <section className="productSection">
-            <h1 className="categoryHeader">PRODUCTS</h1>
+            <h1 className="categoryHeader"><span>BUTIKEN</span><span className="nrItems">({storeProducts.length} produkter)</span></h1>
             <div className="productContainer">
               {storeProducts.map((product, index) => {
                 console.log(index)
