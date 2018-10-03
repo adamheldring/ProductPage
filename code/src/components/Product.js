@@ -2,7 +2,6 @@ import React from "react"
 
 class Product extends React.Component {
   render() {
-
     return (
       <div className="product">
         <h1>{this.props.name}</h1>
@@ -19,12 +18,9 @@ class Product extends React.Component {
           </p>
         <p className="productPrice"><b>{this.props.price}:-</b></p>
         </div>
-
-
         <p className="productDescription">{this.props.description}
           <br /><br /><span className="buyButton">KÖP</span>
         </p>
-
       </div>
     )
   }
